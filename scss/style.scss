@@ -5,7 +5,7 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
 
 
 
-
+/*Fondo del Index*/
 .carousel-item {
     height: 100vh;
     min-height: 300px;
@@ -28,6 +28,7 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
     margin-top: 200px;
     font-family: $tipografia1;
 }
+/*Titulo del Index*/
 .encabezado {
     height: 10%;
     margin-bottom: 65px;
@@ -36,9 +37,7 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
     height: 90%;
     background-color: rgb(68, 68, 68);
 }
-.cambiar-color {
-    background-color: rgb(68, 68, 68);
-}
+/*Navbar*/
 .navbar-nav a {
     font-family: $tipografia1;
     font-size: 20px;
@@ -56,6 +55,7 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
 .navbar-light .navbar-nav .nav-link {
     color: azure !important;
 }
+/*Sub NavBar del Portafolio*/
 .navbar-nav {
     text-align: center;
 }
@@ -66,6 +66,9 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
 .nav-link:hover {
     letter-spacing: 2px;
     color: aqua;
+}
+.cambiar-color {
+    background-color: rgba(161, 244, 244, 0.64);
 }
 .w-100 {
     height: 100vh;
@@ -86,7 +89,7 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
     height: 200vh;
     width: 100vw;
     background-color: rgb(68, 68, 68);
-    grid-template-rows: 1fr 25fr 1fr;
+    grid-template-rows: 5% 75% 5%;
     grid-template-areas: 
     "header"
     "section"
@@ -94,6 +97,7 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
 }
 header {
     grid-area: header;
+    background-color: transparent;
 }
 section {
     grid-area: section;
@@ -107,8 +111,8 @@ footer {
         "header header"
         "footer section"
         "footer section ";
-        grid-template-rows: 1fr 10fr;
-        grid-template-columns: 1fr 5fr ;
+        grid-template-rows: 4% 10fr;
+        grid-template-columns: 10% 5fr ;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -117,13 +121,16 @@ footer {
         "header header header"
         "footer section section"
         "footer section section";
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 10fr;
         grid-template-rows: 1fr 1fr 1fr;
     }
 }
 .fixed-top {
-    border-bottom: 1px dotted azure;
+    border-bottom: 2px dotted azure;
+    padding-bottom: 15px;
 }
+/*Section*/
+/*Sub NavBar*/
 .subnav {
     display: flex;
     flex-direction: row;
@@ -165,6 +172,7 @@ footer {
         width: 70%;
     }
 }
+/* About section*/
 .about {
     display: flex;
     flex-direction: row;
@@ -230,20 +238,57 @@ footer {
         }
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .about {
         display: flex;
         flex-direction: column;
-        align-items: center;
-    
-        div {
-            margin: 0;
+
+        .about__img1 { 
+            img {
+                margin-left: 40px;
+            }
         }
-        img {
-            float: left;
+        .about__p1 {
+            width: 100%;
+            border-radius: 20%;
+            margin-top: -60px;
+
+            h3 {
+                font-size: 30px;
+            }
+
+            p {
+                width: 444px;
+                margin-left: 30px;
+                font-size: 20px;
+            }
+        }
+        .about__p2 {
+            width: 100%;
+            border-radius: 20%;
+            margin-top: 15px;
+
+            h3 {
+                font-size: 30px;
+            }
+
+            p {
+                width: 444px;
+                margin-left: 30px;
+                font-size: 20px;
+            }
+        }
+        .about__img2 {
+            img {
+                float: left;
+                margin-left: 0;
+                margin-top: -20px;
+                border-radius: 0;
+            }
         }
     }
 }
+/*Portafolio Galeria*/
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -287,6 +332,7 @@ footer {
         }
     }
 }
+/*Blog*/
 .blog {
     width: 70%;
     display: flex;
@@ -326,6 +372,7 @@ footer {
         align-items: center;
     }
 }
+/*Contacto*/
 .izq-der {
     display: flex;
     flex-direction: row;
@@ -343,8 +390,8 @@ footer {
             background-color: beige;  
             top: 350px;
             left: 400px;
-            width: 394px;
-            height: 374px;
+            width: 374px;
+            height: 200px;
             -moz-border-radius: 50%;
             -webkit-border-radius: 50%;
             border-radius: 50%;
@@ -364,7 +411,6 @@ footer {
     .mapa {
         background-color: beige;
         width: 450px;
-        border-radius: 6px;
     
         h2 {
             text-align: center;
@@ -375,12 +421,12 @@ footer {
         }
     }
 }
+/*Formulario*/
 .form {
     background: linear-gradient(#7fffd4, #00ced1, #7b68ee);
     width: 400px;
     margin-top: 100px;
     text-align: center;
-    border-radius: 6px;
 
     h2 {
         font-family: $tipografia2;
@@ -427,22 +473,90 @@ footer {
         color: azure;
     }
 }
-@media screen and (max-width: 900px) {
-    .mobile {
+@media only screen and (max-width: 900px) {
+    .izq-der {
         display: flex;
         flex-direction: column;
-        flex-wrap: nowrap;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        .izquierda{
+            img {
+                margin-left: 20px;
+                margin-top: 10px;
+            }
+            .description {
+                position: absolute;
+                left: 100;
+                top: 450px;
+                width: 374px;
+                height: 300px;
+
+                p {
+                    font-size: 35px;
+                }
+            }
+        }
+        .derecha {
+            .mapa {
+                margin-top: 70px;
+                margin-left: 0;
+                width: 100%;
+            }
+        }
     }
-    .description {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        left: 300px;
-        top: 200px;
+    .form {
+        width: 100%;
     }
 }
+@media only screen and (max-width: 768px) {
+    .izq-der {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+
+        .izquierda{
+            img {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+            .description {
+                position: absolute;
+                left: 0;
+                top: 450px;
+                width: 374px;
+                height: 200px;
+
+                p {
+                    font-size: 25px;
+                }
+            }
+        }
+        .derecha {
+            .mapa {
+                margin-top: 70px;
+                margin-left: 0;
+                width: 100%;
+
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .form {
+        width: 100%;
+        margin-top: auto;
+    }
+}
+/*Footer*/
 .pie-de-pag {
-    border-bottom: 1px dotted azure;
+    border-top: 1px dotted azure;
+    background-color: rgb(68, 68, 68);
 }
 .pie__descrpcion {
     display: flex;
@@ -450,14 +564,35 @@ footer {
     justify-content: center;
     width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
     .pie__descrpcion{
         transform: rotate(-90deg);
         position: absolute;
         bottom: 10px;
-        right: 1080px;
+        right: 1120px;
         margin-right: 20px;
-        width: 300px;
+        width: 500px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .pie__descrpcion {
+        transform: rotate(-90deg);
+        position: absolute;
+        bottom: 10px;
+        margin-right: 20px;
+        width: 500px;
+        left: -200px;
+    }
+    .pie-de-pag {
+        border-right: 2px dotted azure;
+        border-top: none;
+    }
+}
+@media  screen and (max-width: 768px) {
+    .pie__descrpcion {
+        transform: rotate(0deg);
+        bottom: -750px;
+        left: 100px;
     }
 }
 .instagram {
