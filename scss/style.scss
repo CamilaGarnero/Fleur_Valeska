@@ -1,5 +1,18 @@
 $tipografia1: 'Cinzel Decorative', cursive;
 $tipografia2: 'Open Sans Condensed', sans-serif;
+$bg-color: #222;
+$blue: #29d9d5;
+$white: azure;
+$fondo: #444444;
+$divs: #f5f5dc;
+$sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+}
+
 
 
 
@@ -35,7 +48,7 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
 }
 .medio {
     height: 90%;
-    background-color: rgb(68, 68, 68);
+    background: $fondo;
 }
 /*Navbar*/
 .navbar-nav a {
@@ -46,14 +59,14 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
     cursor: pointer;
 }
 .navbar-light .navbar-brand {
-    color: #fff;
+    color: $white;
     font-size: 25px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
 }
 .navbar-light .navbar-nav .nav-link {
-    color: azure !important;
+    color: $white !important;
 }
 /*Sub NavBar del Portafolio*/
 .navbar-nav {
@@ -65,7 +78,7 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
 }
 .nav-link:hover {
     letter-spacing: 2px;
-    color: aqua;
+    color: $blue;
 }
 .cambiar-color {
     background-color: rgba(161, 244, 244, 0.64);
@@ -81,14 +94,14 @@ $tipografia2: 'Open Sans Condensed', sans-serif;
         padding: 1px 5px;
         font-size: 18px;
         line-height: 0.3;
-        background: #fff;
+        background: $white;
     }
 }
 .homegrid {
     display: grid;
     height: 200vh;
     width: 100vw;
-    background-color: rgb(68, 68, 68);
+    background: $fondo;
     grid-template-rows: 5% 85% 5%;
     grid-template-areas: 
     "header"
@@ -126,7 +139,7 @@ footer {
     }
 }
 .fixed-top {
-    border-bottom: 2px dotted azure;
+    border-bottom: 2px dotted $white;
     padding-bottom: 15px;
 }
 /*Section*/
@@ -139,7 +152,7 @@ footer {
     li {
         font-family: $tipografia2;
         font-size: 20px;
-        color: azure;
+        color: $white;
         text-decoration: none;
         padding: 10px 20px;
         cursor: pointer;
@@ -168,13 +181,13 @@ footer {
             width: 370px;
             border-radius: 6px;
             margin-top: 30px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: $sombra;
         }
     }
     .about__p1 {
         display: flex;
         flex-direction: column;
-        background-color: beige;
+        background-color: $divs;
         float: right;
         margin-top: 250px;
         width: 484px;
@@ -182,7 +195,7 @@ footer {
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         border-radius: 50%;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: $sombra;
     
         h3 {
             text-align: center;
@@ -203,17 +216,17 @@ footer {
         border-radius: 6px;
         float: right;
         margin-left: 50px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: $sombra;
         margin-top: -600px;
     }
     .about__p2 {
-        background-color: beige;
+        background-color: $divs;
         width: 384px;
         height: 384px;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         border-radius: 50%;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: $sombra;
         margin-left: 100px;
         margin-top: -600px;
     
@@ -381,43 +394,64 @@ footer {
     }
 }
 /*Blog*/
-.blog {
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.blogs .heading {
+    .titulo {
+        font-family: $tipografia1;
+        margin-top: 10px;
+        margin-left: 8px;
+        color: $white;
+    }
+    .subtitulo {
+        font-family: $tipografia2;
+        color: $blue;
+    }
 }
-.card {
-    width: 300px;
-    border-radius: 10px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center center;
-    background-color: beige;
-    margin: 10px;
+.blogs .box-container {
+    @include grid(17rem);
 
-    img {
-        width: 200px;
-        height: 150px;
-    }
-    .blog__textos {
-        h3 {
-            font-family: $tipografia1;
-            text-align: center;
+
+    .box {
+        border-radius: 1rem;
+        overflow: hidden;
+        background: rgb(17,17,17,0.7);
+
+        &:hover {
+            transform: scale(1.1);
         }
-        p {
-            font-family: $tipografia2;
-            text-align: center;
+
+        .image {
+            height: 20rem;
+            overflow: hidden;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
         }
-    }
-}
-@media screen and (max-width: 768px) {
-    .blog {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        .content {
+            padding: 2rem;
+            text-align: center;
+
+            h3 {
+                font-size: 2rem;
+                color: white;
+            }
+
+            p {
+                padding: 1rem 0;
+                font-size: 1rem;
+                color: #444;
+                line-height: 2;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 1.1rem;
+                color: $blue;
+            }
+        }
     }
 }
 /*Contacto*/
