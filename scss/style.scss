@@ -85,7 +85,18 @@ $sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
 .w-100 {
     height: 100vh;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
+    .navbar-nav.ms-auto {
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .navbar-toggler {
+        padding: 1px 5px;
+        font-size: 18px;
+        line-height: 0.3;
+        background: $white;
+    }
+}
+@media only screen and (max-width: 768px) {
     .navbar-nav.ms-auto {
         background: rgba(0, 0, 0, 0.5);
     }
@@ -101,7 +112,7 @@ $sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 200vh;
     width: 100vw;
     background: $fondo;
-    grid-template-rows: 5% 85% 5%;
+    grid-template-rows: 5% 96.5% 5%;
     grid-template-areas: 
     "header"
     "section"
@@ -109,7 +120,6 @@ $sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 header {
     grid-area: header;
-    background-color: transparent;
 }
 section {
     grid-area: section;
@@ -160,6 +170,14 @@ footer {
         text-transform: uppercase;
         width: 100%;
     }
+    .btn:hover, 
+    .btn:active {
+        letter-spacing: 2px;
+        color: rgb(8, 8, 8);
+        background-color: #9d8cff8e;
+    }
+}
+@media screen and (max-width: 1200px) {
     .btn:hover, 
     .btn:active {
         letter-spacing: 2px;
@@ -260,13 +278,13 @@ footer {
             margin-top: 325px;
 
             h3 {
-                font-size: 30px;
+                font-size: 35px;
             }
 
             p {
                 width: 699px;
                 margin-left: 30px;
-                font-size: 20px;
+                font-size: 25px;
             }
         }
         .about__p2 {
@@ -276,13 +294,13 @@ footer {
             margin-left: inherit;
 
             h3 {
-                font-size: 30px;
+                font-size: 35px;
             }
 
             p {
                 width: 699px;
                 margin-left: 30px;
-                font-size: 20px;
+                font-size: 25px;
             }
         }
         .about__img2 {
@@ -313,13 +331,13 @@ footer {
             margin-top: 325px;
 
             h3 {
-                font-size: 30px;
+                font-size: 35px;
             }
 
             p {
                 width: 408px;
                 margin-left: 27px;
-                font-size: 20px;
+                font-size: 23px;
             }
         }
         .about__p2 {
@@ -329,13 +347,13 @@ footer {
             margin-left: inherit;
 
             h3 {
-                font-size: 30px;
+                font-size: 35px;
             }
 
             p {
                 width: 408px;
                 margin-left: 27px;
-                font-size: 20px;
+                font-size: 23px;
             }
         }
         .about__img2 {
@@ -376,7 +394,7 @@ footer {
         }
     }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
     .row .column {
         flex: 50%;
 
@@ -395,7 +413,7 @@ footer {
         }
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .row {
         .column {
             flex: 100%;
@@ -449,7 +467,7 @@ footer {
 
             h3 {
                 font-size: 2rem;
-                color: white;
+                color: $white;
             }
 
             p {
@@ -478,19 +496,20 @@ footer {
         img {
             width: 300px;
             border-radius: 6px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: $sombra;
+            margin-top: 50px;
         }
         .description {
             position: absolute;
-            background-color: beige;  
-            top: 350px;
+            background-color: $divs;  
+            top: 400px;
             left: 400px;
             width: 374px;
             height: 200px;
             -moz-border-radius: 50%;
             -webkit-border-radius: 50%;
             border-radius: 50%;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: $sombra;
 
             p{
                 width: 300px;
@@ -504,22 +523,26 @@ footer {
         }
     }
     .mapa {
-        background-color: beige;
-        width: 450px;
+        background-color: $divs;
+        width: 550px;
+        height: 500px;
+        margin-top: 50px;
     
         h2 {
             text-align: center;
             font-family: $tipografia2;
         } 
         iframe {
-            left: 20px;
+            width: 100%;
+            height: 100%;
         }
     }
 }
 /*Formulario*/
 .form {
     background: linear-gradient(#7fffd4, #00ced1, #7b68ee);
-    width: 400px;
+    width: 100%;
+    height: 500px;
     margin-top: 100px;
     text-align: center;
 
@@ -549,6 +572,7 @@ footer {
         background-color: #7c68ee8e;
         border-radius: 2px;
         margin: 10px;
+        box-shadow: $sombra;
     }
     .formulario__enviar 
         input {
@@ -557,6 +581,12 @@ footer {
             border: none;
             text-transform: uppercase;
             cursor: pointer;
+            border-radius: 4px;
+            box-shadow: $sombra;
+
+            &:hover {
+                background-color: $blue;
+            }
         }
     .formulario__comment {
         border: 3px solid #332a80;
@@ -565,7 +595,8 @@ footer {
         margin: 8px 0;
         box-sizing: border-box;
         background-color: #555;
-        color: azure;
+        color: $white;
+        width: 90%;
     }
 }
 @media only screen and (max-width: 900px) {
@@ -603,6 +634,7 @@ footer {
     }
     .form {
         width: 100%;
+        margin-top: 0;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -650,8 +682,8 @@ footer {
 }
 /*Footer*/
 .pie-de-pag {
-    border-top: 1px dotted azure;
-    background-color: rgb(68, 68, 68);
+    border-top: 1px dotted $white;
+    background-color: $fondo;
 }
 .pie__descrpcion {
     display: flex;
@@ -679,26 +711,26 @@ footer {
         left: -200px;
     }
     .pie-de-pag {
-        border-right: 2px dotted azure;
+        border-right: 2px dotted $white;
         border-top: none;
     }
 }
 @media  screen and (max-width: 768px) {
     .pie__descrpcion {
         transform: rotate(0deg);
-        bottom: -750px;
-        left: 0;
+        bottom: -920px;
+        left: -10px;
     }
 }
 .instagram {
     font-family: $tipografia2;
     font-size: 20px;
-    color: azure;
+    color: $white;
     padding: 0 20px;
 }
 .copyright {
     font-size: 20px;
-    color: azure;
+    color: $white;
     font-family: $tipografia1;
     width: 100px;
     text-align: center;
@@ -707,6 +739,6 @@ footer {
 .facebook {
     font-family: $tipografia2;
     font-size: 20px;
-    color: azure;
+    color: $white;
     padding: 0 20px;
 }
