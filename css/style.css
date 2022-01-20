@@ -377,7 +377,7 @@ footer {
 
 /*Contacto*/
 .contact {
-  margin: 0;
+  margin-top: -700px;
   position: relative;
   min-height: 100vh;
   padding: 50px 100px;
@@ -385,7 +385,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url(../assets/img/pexels-aron-visuals-1686451.jpg);
+  background-image: url(../assets/img/pexels-matheus-bertelli-23769911.jpg);
   background-size: cover;
 }
 .contact .content {
@@ -436,7 +436,97 @@ footer {
   flex-direction: column;
   font-weight: 300;
 }
+.contact .container .contactForm {
+  width: 50%;
+  padding: 40px;
+  background: azure;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.contact .container .contactForm h2 {
+  font-size: 30px;
+  color: #222;
+  font-weight: 500;
+}
+.contact .container .contactForm .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+.contact .container .contactForm .inputBox input {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #222;
+  outline: none;
+  resize: none;
+}
+.contact .container .contactForm .inputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #222;
+  outline: none;
+}
+.contact .container .contactForm .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+.contact .container .contactForm .inputBox input:focus ~ span,
+.contact .container .contactForm .inputBox input:valid ~ span {
+  color: #29d9d5;
+  font-size: 12px;
+  transform: translate(-20px);
+}
+.contact .container .contactForm .inputBox textarea:focus ~ span,
+.contact .container .contactForm .inputBox textarea:valid ~ span {
+  color: #29d9d5;
+  font-size: 12px;
+  transform: translate(-20px);
+}
+.contact .container .contactForm .inputBox input [type=submit] {
+  width: 100px;
+  background: #29d9d5;
+  color: azure;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+.contact .imagenContact {
+  width: 100%;
+  margin-top: 30px;
+  margin-left: -20px;
+}
+.contact .imagenContact img {
+  width: 100%;
+  border-radius: 10px;
+}
 
+@media screen and (max-width: 991px) {
+  .contact {
+    padding: 50px;
+  }
+  .contact .container {
+    flex-direction: column;
+  }
+  .contact .container .contactInfo {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .contact .container .contactForm {
+    width: 100%;
+  }
+}
 /*Footer*/
 .pie-de-pag {
   border-top: 1px dotted azure;

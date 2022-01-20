@@ -405,7 +405,7 @@ footer {
 }
 /*Contacto*/
 .contact {
-    margin: 0;
+    margin-top: -700px;
     position: relative;
     min-height: 100vh;
     padding: 50px 100px;
@@ -413,7 +413,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(../assets/img/pexels-aron-visuals-1686451.jpg);
+    background-image: url(../assets/img/pexels-matheus-bertelli-23769911.jpg);
     background-size: cover;
 
     .content {
@@ -467,9 +467,103 @@ footer {
                 }
             }
         }
+        .contactForm {
+            width: 50%;
+            padding: 40px;
+            background: $white;
+            box-shadow: $sombra;
+
+            h2 {
+                font-size: 30px;
+                color: $bg-color;
+                font-weight: 500;
+            }
+            .inputBox {
+                position: relative;
+                width: 100%;
+                margin-top: 10px;
+
+                input {
+                    width: 100%;
+                    padding: 5px 0;
+                    font-size: 16px;
+                    margin: 10px 0;
+                    border: none;
+                    border-bottom: 2px solid $bg-color;
+                    outline: none;
+                    resize: none;
+                }
+                textarea {
+                    width: 100%;
+                    padding: 5px 0;
+                    font-size: 16px;
+                    margin: 10px 0;
+                    border: none;
+                    border-bottom: 2px solid $bg-color;
+                    outline: none;
+                }
+                span {
+                    position: absolute;
+                    left: 0;
+                    padding: 5px 0;
+                    font-size: 16px;
+                    margin: 10px 0;
+                    pointer-events: none;
+                    transition: 0.5s;
+                    color: #666;
+                }
+                input:focus ~ span,
+                input:valid ~ span {
+                    color: $blue;
+                    font-size: 12px;
+                    transform: translate(-20px);
+                }
+                textarea:focus ~ span,
+                textarea:valid ~ span {
+                    color: $blue;
+                    font-size: 12px;
+                    transform: translate(-20px);
+                }
+                input [type="submit"] {
+                    width: 100px;
+                    background: $blue;
+                    color: $white;
+                    border: none;
+                    cursor: pointer;
+                    padding: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .imagenContact {
+        width: 100%;
+        margin-top: 30px;
+        margin-left: -20px;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
     }
 }
+@media screen and (max-width: 991px) {
+    .contact {
+        padding: 50px;
 
+        .container {
+            flex-direction: column;
+
+            .contactInfo {
+                margin-bottom: 40px;
+                width: 100%;
+            }
+            .contactForm {
+                width: 100%;
+            }
+        }
+    }
+}
 
 /*Footer*/
 .pie-de-pag {
