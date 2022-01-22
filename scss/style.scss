@@ -405,7 +405,7 @@ footer {
 }
 /*Contacto*/
 .contact {
-    margin-top: -700px;
+    margin-top: 0;
     position: relative;
     min-height: 100vh;
     padding: 50px 100px;
@@ -419,15 +419,17 @@ footer {
     .content {
         max-width: 800px;
         text-align: center;
+        margin-top: -200px;
 
         h2 {
-            font-size: 36px;
+            font-size: 100px;
             font-weight: 500;
             color: $white;
         }
         p {
             font-weight: 300;
             color: $white;
+            font-size: 25px;
         }
     }
     .container {
@@ -456,6 +458,11 @@ footer {
                     align-items: center;
                     border-radius: 50%;
                     font-size: 22px;
+
+                    iframe {
+                        width: 50px;
+                        height: 50px;
+                    }
                 }
                 .text {
                     display: flex;
@@ -538,12 +545,16 @@ footer {
     }
     .imagenContact {
         width: 100%;
+        display: flex;
+        flex-direction: row;
         margin-top: 30px;
         margin-left: -20px;
 
         img {
             width: 100%;
             border-radius: 10px;
+            margin-left: 10px;
+            box-shadow: $sombra;
         }
     }
 }
@@ -560,6 +571,14 @@ footer {
             }
             .contactForm {
                 width: 100%;
+            }
+        }
+        .imagenContact {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                margin-top: 10px;
             }
         }
     }

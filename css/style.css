@@ -377,7 +377,7 @@ footer {
 
 /*Contacto*/
 .contact {
-  margin-top: -700px;
+  margin-top: 0;
   position: relative;
   min-height: 100vh;
   padding: 50px 100px;
@@ -391,15 +391,17 @@ footer {
 .contact .content {
   max-width: 800px;
   text-align: center;
+  margin-top: -200px;
 }
 .contact .content h2 {
-  font-size: 36px;
+  font-size: 100px;
   font-weight: 500;
   color: azure;
 }
 .contact .content p {
   font-weight: 300;
   color: azure;
+  font-size: 25px;
 }
 .contact .container {
   width: 100%;
@@ -427,6 +429,10 @@ footer {
   align-items: center;
   border-radius: 50%;
   font-size: 22px;
+}
+.contact .container .contactInfo .box .icon iframe {
+  width: 50px;
+  height: 50px;
 }
 .contact .container .contactInfo .box .text {
   display: flex;
@@ -504,12 +510,16 @@ footer {
 }
 .contact .imagenContact {
   width: 100%;
+  display: flex;
+  flex-direction: row;
   margin-top: 30px;
   margin-left: -20px;
 }
 .contact .imagenContact img {
   width: 100%;
   border-radius: 10px;
+  margin-left: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 @media screen and (max-width: 991px) {
@@ -525,6 +535,13 @@ footer {
   }
   .contact .container .contactForm {
     width: 100%;
+  }
+  .contact .imagenContact {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact .imagenContact img {
+    margin-top: 10px;
   }
 }
 /*Footer*/
