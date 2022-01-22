@@ -78,9 +78,13 @@ $sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
 .nav-link:hover {
     letter-spacing: 2px;
     color: $blue;
+    background-color: $bg-color;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: all 0.5s ease 0s;
 }
 .cambiar-color {
-    background-color: rgba(161, 244, 244, 0.64);
+    background-color: rgba(26, 196, 180, 0.74);
 }
 .w-100 {
     height: 100vh;
@@ -88,6 +92,15 @@ $sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
 @media only screen and (max-width: 1000px) {
     .navbar-nav.ms-auto {
         background: rgba(0, 0, 0, 0.5);
+        box-shadow: $sombra;
+        border-radius: 10px;
+
+        .nav-link:hover {
+            letter-spacing: 2px;
+            color: $blue;
+            background-color: $bg-color;
+            border-radius: 10px;
+        }
     }
     .navbar-toggler {
         padding: 1px 5px;
@@ -99,6 +112,15 @@ $sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
 @media only screen and (max-width: 768px) {
     .navbar-nav.ms-auto {
         background: rgba(0, 0, 0, 0.5);
+        box-shadow: $sombra;
+        border-radius: 10px;
+
+        .nav-link:hover {
+            letter-spacing: 2px;
+            color: $blue;
+            background-color: $bg-color;
+            border-radius: 10px;
+        }
     }
     .navbar-toggler {
         padding: 1px 5px;
@@ -112,7 +134,7 @@ $sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 200vh;
     width: 100vw;
     background: $fondo;
-    grid-template-rows: 5% 96.5% 5%;
+    grid-template-rows: 5% 95% 5%;
     grid-template-areas: 
     "header"
     "section"
@@ -560,14 +582,31 @@ footer {
 }
 @media screen and (max-width: 991px) {
     .contact {
-        padding: 50px;
+        margin-top: 2px;
+
+        .content {
+            margin-top: 200px;
+
+            h2 {
+                font-size: 65px;
+                margin-top: -100px;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 17px;
+                margin-bottom: 70px;
+            }
+        }
 
         .container {
             flex-direction: column;
 
             .contactInfo {
-                margin-bottom: 40px;
                 width: 100%;
+
+                .box {
+                    margin-top: -40px;
+                }
             }
             .contactForm {
                 width: 100%;
@@ -586,63 +625,64 @@ footer {
 
 /*Footer*/
 .pie-de-pag {
-    border-top: 1px dotted $white;
+    position: relative;
+    border-right: 1px dotted $white;
     background-color: $fondo;
-}
-.pie__descrpcion {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 100%;
-}
-@media screen and (min-width: 1200px) {
-    .pie__descrpcion{
-        transform: rotate(-90deg);
-        position: absolute;
-        bottom: 10px;
-        right: 1120px;
-        margin-right: 20px;
-        width: 500px;
-    }
-}
-@media screen and (max-width: 1200px) {
-    .pie__descrpcion {
-        transform: rotate(-90deg);
-        position: absolute;
-        bottom: 10px;
-        margin-right: 20px;
-        width: 500px;
-        left: -200px;
-    }
-    .pie-de-pag {
-        border-right: 2px dotted $white;
-        border-top: none;
-    }
-}
-@media  screen and (max-width: 768px) {
-    .pie__descrpcion {
-        transform: rotate(0deg);
-        bottom: -920px;
-        left: -10px;
-    }
-}
-.instagram {
-    font-family: $tipografia2;
-    font-size: 20px;
-    color: $white;
-    padding: 0 20px;
-}
-.copyright {
-    font-size: 20px;
-    color: $white;
-    font-family: $tipografia1;
-    width: 100px;
-    text-align: center;
 
+    .pie__descripcion {
+        transform: rotate(-90deg);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin-top: 600px;
+
+        .instagram {
+            font-family: $tipografia2;
+            font-size: 20px;
+            padding: 0 20px;
+            margin-top: 20px;
+            
+            a {
+                text-decoration: none;
+                color: $white;
+            }
+            a:hover {
+                color: $blue;
+                background-color: $bg-color;
+                border-radius: 10px;
+            }
+        }
+        .copyright {
+            font-size: 25px;
+            color: $white;
+            font-family: $tipografia1;
+            width: 100px;
+            text-align: center;
+        
+        }
+        .facebook {
+            font-family: $tipografia2;
+            font-size: 20px;
+            padding: 0 20px;
+            margin-top: 20px;
+
+            a {
+                text-decoration: none;
+                color: $white;
+            }
+            a:hover {
+                color: $blue;
+                background-color: $bg-color;
+                border-radius: 10px;
+            }
+        }
+    }
 }
-.facebook {
-    font-family: $tipografia2;
-    font-size: 20px;
-    color: $white;
-    padding: 0 20px;
+@media screen and (max-width: 768px) {
+    .pie__descripcion {
+        transform: rotate(0deg)!important;
+        margin-top: 0 !important;
+    }
 }

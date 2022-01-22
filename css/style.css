@@ -70,10 +70,14 @@
 .nav-link:hover {
   letter-spacing: 2px;
   color: #29d9d5;
+  background-color: #222;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all 0.5s ease 0s;
 }
 
 .cambiar-color {
-  background-color: rgba(161, 244, 244, 0.64);
+  background-color: rgba(26, 196, 180, 0.74);
 }
 
 .w-100 {
@@ -83,6 +87,14 @@
 @media only screen and (max-width: 1000px) {
   .navbar-nav.ms-auto {
     background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+  .navbar-nav.ms-auto .nav-link:hover {
+    letter-spacing: 2px;
+    color: #29d9d5;
+    background-color: #222;
+    border-radius: 10px;
   }
 
   .navbar-toggler {
@@ -95,6 +107,14 @@
 @media only screen and (max-width: 768px) {
   .navbar-nav.ms-auto {
     background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+  .navbar-nav.ms-auto .nav-link:hover {
+    letter-spacing: 2px;
+    color: #29d9d5;
+    background-color: #222;
+    border-radius: 10px;
   }
 
   .navbar-toggler {
@@ -109,7 +129,7 @@
   height: 200vh;
   width: 100vw;
   background: #444444;
-  grid-template-rows: 5% 96.5% 5%;
+  grid-template-rows: 5% 95% 5%;
   grid-template-areas: "header" "section" "footer";
 }
 
@@ -524,14 +544,28 @@ footer {
 
 @media screen and (max-width: 991px) {
   .contact {
-    padding: 50px;
+    margin-top: 2px;
+  }
+  .contact .content {
+    margin-top: 200px;
+  }
+  .contact .content h2 {
+    font-size: 65px;
+    margin-top: -100px;
+    margin-bottom: 20px;
+  }
+  .contact .content p {
+    font-size: 17px;
+    margin-bottom: 70px;
   }
   .contact .container {
     flex-direction: column;
   }
   .contact .container .contactInfo {
-    margin-bottom: 40px;
     width: 100%;
+  }
+  .contact .container .contactInfo .box {
+    margin-top: -40px;
   }
   .contact .container .contactForm {
     width: 100%;
@@ -546,69 +580,62 @@ footer {
 }
 /*Footer*/
 .pie-de-pag {
-  border-top: 1px dotted azure;
+  position: relative;
+  border-right: 1px dotted azure;
   background-color: #444444;
+  width: 100%;
 }
-
-.pie__descrpcion {
+.pie-de-pag .pie__descripcion {
+  transform: rotate(-90deg);
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  margin-top: 600px;
 }
-
-@media screen and (min-width: 1200px) {
-  .pie__descrpcion {
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: 10px;
-    right: 1120px;
-    margin-right: 20px;
-    width: 500px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .pie__descrpcion {
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: 10px;
-    margin-right: 20px;
-    width: 500px;
-    left: -200px;
-  }
-
-  .pie-de-pag {
-    border-right: 2px dotted azure;
-    border-top: none;
-  }
-}
-@media screen and (max-width: 768px) {
-  .pie__descrpcion {
-    transform: rotate(0deg);
-    bottom: -920px;
-    left: -10px;
-  }
-}
-.instagram {
+.pie-de-pag .pie__descripcion .instagram {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 20px;
-  color: azure;
   padding: 0 20px;
+  margin-top: 20px;
 }
-
-.copyright {
-  font-size: 20px;
+.pie-de-pag .pie__descripcion .instagram a {
+  text-decoration: none;
+  color: azure;
+}
+.pie-de-pag .pie__descripcion .instagram a:hover {
+  color: #29d9d5;
+  background-color: #222;
+  border-radius: 10px;
+}
+.pie-de-pag .pie__descripcion .copyright {
+  font-size: 25px;
   color: azure;
   font-family: "Cinzel Decorative", cursive;
   width: 100px;
   text-align: center;
 }
-
-.facebook {
+.pie-de-pag .pie__descripcion .facebook {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 20px;
-  color: azure;
   padding: 0 20px;
+  margin-top: 20px;
+}
+.pie-de-pag .pie__descripcion .facebook a {
+  text-decoration: none;
+  color: azure;
+}
+.pie-de-pag .pie__descripcion .facebook a:hover {
+  color: #29d9d5;
+  background-color: #222;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .pie__descripcion {
+    transform: rotate(0deg) !important;
+    margin-top: 0 !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
